@@ -6,5 +6,5 @@ for i in range(len(s1)):
     for j in s1:
         while j in s:
             count += s.count(j)
-            del s[0]
+            del s[s.index(j)]
 print(count - len_s)
