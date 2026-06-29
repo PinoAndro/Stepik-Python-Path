@@ -1,0 +1,40 @@
+def rotate(n, matrix):
+    matrix_copy = [row[:] for row in matrix]
+    matrix_copy.reverse()
+    for i in range(n):
+        for j in range(n):
+            matrix[i][j] = matrix_copy[j][i]
+
+def check(matrix):
+    numbers = []
+    diag = []
+    check_num = []
+    for i in range(n):
+        for j in range(n):
+            numbers.append(matrix[i][j])
+            if matrix[i][j] not in check_num and 1 <= matrix[i][j] <= n**2:
+                check_num.append(matrix[i][j])
+            else:
+                return "NO"
+        if sum(numbers) == ok:
+            numbers.clear()
+            diag.append(matrix[i][i])
+            continue
+        else:
+            return "NO"
+    if sum(diag) == ok:
+        return "YES"
+
+n = int(input())
+matrix = [[int(i) for i in input().split()] for _ in range(n)]
+ok = sum(matrix[0])
+if check(matrix) == "YES":
+    rotate(n, matrix)
+    print(check(matrix))
+else:
+    print("NO")
+
+
+
+
+
